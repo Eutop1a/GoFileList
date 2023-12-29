@@ -1,0 +1,123 @@
+.bcg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -30;
+}
+.content {
+  position: relative;
+  font-size: 20px;
+  width: 1136px;
+  margin: 180px auto;
+  padding: 50px;
+  border-radius: 5px;
+  background-color: white;
+  text-align: left;
+}
+.content .in,
+.content .out,
+.content .author,
+.content .tip {
+  padding-top: 10px;
+}
+.content * {
+  padding-bottom: 50px;
+}
+.content .out {
+  padding-bottom: 15px;
+}
+.content .tip,
+.content .author {
+  padding-bottom: 20px;
+}
+.content .ctitle {
+  font-weight: 900;
+  font-size: 34px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+}
+.content .cdetail {
+  font-size: 24px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+}
+.content .tijiao {
+  padding-bottom: 5px;
+  font-size: 16px;
+  color: red;
+}
+.content .tijiao span {
+  position: relative;
+  left: 540px;
+  top: 368px;
+  padding: 23px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.content .tijiao #a1000,
+.content .tijiao #a1001,
+.content .tijiao #a1002,
+.content .tijiao #a1003,
+.content .tijiao #a1004,
+.content .tijiao #a1005,
+.content .tijiao #a1010 {
+  display: none;
+}
+.content .tijiao #a1000 {
+  color: #000;
+}
+.content .tijiao #a1001 {
+  left: 534px;
+}
+.content .tijiao #a1002 {
+  left: 515px;
+}
+.content .tijiao #a1003 {
+  left: 517px;
+}
+.content .tijiao #a1004 {
+  left: 517px;
+}
+.content .tijiao #a1005 {
+  left: 517px;
+}
+.content .tijiao #a1010 {
+  left: 517px;
+}
+.content .gg {
+  position: relative;
+}
+.content .gg .g {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  margin-top: 5px;
+  margin-right: 5px;
+  appearance: none;
+  padding: 5px 20px 5px 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #0f0101;
+  font-size: 14px;
+  cursor: pointer;
+}
+.content .gg .code {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #ccc;
+  font-family: "Fira Mono", "Bitstream Vera Sans Mono", Menlo, Consolas, "Lucida Console", "Source Han Sans SC", "Noto Sans CJK SC", "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", monospace;
+  /* 设置字体，可以根据需要更改 */
+  font-size: 18px;
+  padding: 5px;
+  resize: none;
+}
+.content .btn {
+  transform: translateX(500px);
+}

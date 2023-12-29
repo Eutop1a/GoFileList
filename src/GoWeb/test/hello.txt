@@ -1,0 +1,10 @@
+<h1 style='color:orange'>hello, golang!</h1>
+<h2>how are you</h2>
+<img id='i1' src='https://img.tt98.com/d/file/pic/20190529171321/002.jpg'>
+<button id='b1'>点我</button>
+<script>
+document.getElementById('b1').onclick=function() {
+    document.getElementById('i1').src='https://img.tt98.com/d/file/pic/20190529171323/004.jpg'
+}
+</script>
+

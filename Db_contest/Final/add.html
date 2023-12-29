@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加问题</title>
+    <link rel="stylesheet" href="./lib/jquery.js">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/add.css">
+    <link rel="stylesheet" href="./iconfont/download/font_4051106_0wwlj73gl1pq/iconfont.css">
+    <link rel="stylesheet" href="./lib/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <img src="./img/985330.jpg" alt="图裂了" class="bcg">
+    <div class="header">
+        <div class="left"><span class="title"><a href="./question.html">题目总览</a></span><span class="sort"><a
+                    href="./sort.html">排行榜</a></span></div>
+        <div class="right"><span><span class="imfor"><span class="id"></span><span class="nick"></span></span><a href=""
+                    class="exit">退出登录</a></span></div>
+    </div>
+    <div class="content">
+        <div class="tian">请填写要上传的题目信息</div>
+        <div class="answer">问题ID：<textarea></textarea></div>
+        <div class="ctitle">题目标题：<textarea></textarea></div>
+        <div class="cdetail">题目详情：<textarea></textarea></div>
+        <div class="score">题目分值：<textarea></textarea></div>
+        <div class="in">输入样例：<textarea></textarea></div>
+        <div class="out">输出样例：<textarea></textarea></div>
+        <div class="tip">提示信息：<textarea></textarea></div>
+        <div class="infile">输入文件：</div>
+        <input type="file" id="Inputfile">
+        <div class="outfile">输出文件：</div>
+        <input type="file" id="Outputfile">
+
+        <button type="button" class="btn btn-default btn-lg">提交</button>
+    </div>
+    <!-- <div class="footer">要有底线！</div> -->
+    <script>
+    const t = { Token: localStorage.getItem('token') }
+        console.log(t);
+        // const t = localStorage.getItem('token')
+        if (t.Token) {
+            //判断令牌是否过期，如果过期清楚登录状态，如果没有就跳转
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:65533/api/open", true)
+            // xhr.open("POST", "/open"); // 根据实际的后端路由进行设置
+            xhr.setRequestHeader("Authorization", t.Token)
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        // token没过期
+                    
+                    }
+                    if (xhr.status === 400 || xhr.status === 401) {
+                        // 请求失败，显示错误信息
+                        console.log(1);
+                        localStorage.removeItem('uid')
+                        localStorage.removeItem('token')
+                        alert("登录状态过期，请重新登录！");
+                        self.location = 'index.html'
+                    }
+                }
+            };
+
+
+            xhr.send();
+        }
+        else{
+            alert("登录状态过期，请重新登录！");
+            self.location = 'index.html'
+        }
+        //打开页面获取右上角信息
+        (function () {
+            const id = document.querySelector('.id')
+            id.innerHTML = localStorage.getItem('uid')
+            // const data = {
+            //     username: localStorage.getItem('uid')
+            // }
+            // console.log(data);
+            // const nick = document.querySelector('.nick')
+            // const xhr = new XMLHttpRequest();
+            // xhr.open("POST", "http://localhost:65533/get", true)
+            // // xhr.open("POST", "/get"); // 根据实际的后端路由进行设置
+            // // xhr.setRequestHeader("Content-Type", "application/json");
+            // xhr.send(JSON.stringify(data))
+            // xhr.onreadystatechange = function () {
+            //     if (xhr.readyState === XMLHttpRequest.DONE) {
+            //         if (xhr.readyState == 4 && xhr.status === 200) {
+            //             // 请求成功，处理响应
+            //             response = xhr.responseText;
+            //             console.log(response);
+            //             nick.innerHTML = response
+            //         }
+            //     }
+            // };
+            const exit = document.querySelector('.exit')
+            exit.addEventListener('click', e => {
+                e.preventDefault()
+                localStorage.removeItem('uid')
+                localStorage.removeItem('token')
+                self.location = 'index.html'
+            })
+        })();
+
+        // //提交问题
+        // (function () {
+        //     const title = document.querySelector('.ctitle textarea')
+        //     const detail = document.querySelector('.cdetail textarea')
+        //     const cin = document.querySelector('.in textarea')
+        //     const cout = document.querySelector('.out textarea')
+        //     const tip = document.querySelector('.tip textarea')
+        //     const aid = document.querySelector('.answer textarea')
+        //     const btn = document.querySelector('button')
+
+
+        //     btn.addEventListener('click', e => {
+        //         e.preventDefault()
+
+        //         const data = {
+        //             id: parseInt(aid.value),
+        //             title: title.value,
+        //             lore: detail.value,
+        //             input: cin.value,
+        //             output: cout.value,
+        //             tips: tip.value
+        //         }
+        //         console.log(data);
+        //         const xhr = new XMLHttpRequest();
+        //         xhr.open("POST", "http://localhost:65533/api/problem/add", true)
+        //         xhr.setRequestHeader("Authorization", t.Token)
+        //         xhr.onreadystatechange = function () {
+        //             if (xhr.readyState == 4 && xhr.status === 200) {
+        //                 console.log("Success received 200")
+        //                 response = xhr.responseText;
+        //                 console.log(response);
+        //             }
+        //         };
+        //         xhr.send(JSON.stringify(data))
+        //             // xhr.send(data)
+        //             (function () {
+        //                 const xhr = new XMLHttpRequest();
+        //                 var url = "http://localhost:65533/api/problem/file/add/"
+        //                 url += aid.value
+        //                 xhr.open("POST", url, true)
+        //                 xhr.setRequestHeader("Authorization", t.Token)
+        //                 xhr.onreadystatechange = function () {
+        //                     if (xhr.readyState == 4 && xhr.status === 200) {
+        //                         response = xhr.responseText;
+        //                         console.log(response);
+        //                     }
+        //                 };
+        //                 xhr.send(JSON.stringify(data))
+        //                 // xhr.send(data)
+        //             }());
+
+        //     })
+
+        // }());
+        // chatgpt修改后的
+        (function () {
+            const title = document.querySelector('.ctitle textarea');
+            const detail = document.querySelector('.cdetail textarea');
+            const cin = document.querySelector('.in textarea');
+            const cout = document.querySelector('.out textarea');
+            const tip = document.querySelector('.tip textarea');
+            const aid = document.querySelector('.answer textarea');
+            const btn = document.querySelector('button');
+            const score = document.querySelector('.score textarea');
+            btn.addEventListener('click', e => {
+                e.preventDefault();
+
+                // const data = {
+                //     id: parseInt(aid.value),
+                //     title: title.value,
+                //     lore: detail.value,
+                //     input: cin.value,
+                //     output: cout.value,
+                //     tips: tip.value
+                // };
+
+                // const xhr1 = new XMLHttpRequest();
+                // xhr1.open("POST", "http://localhost:65533/api/problem/add", true);
+                // xhr1.setRequestHeader("Content-Type", "application/json");
+                // xhr1.setRequestHeader("Authorization", t.Token);
+                // xhr1.onreadystatechange = function () {
+                //     if (xhr1.readyState == 4 && xhr1.status === 200) {
+                //         console.log("Success received 200");
+                //         response = xhr1.responseText;
+                //         console.log(response);
+
+                //         const xhr2 = new XMLHttpRequest();
+                //         var url = "http://localhost:65533/api/problem/file/add/" + aid.value;
+                //         xhr2.open("POST", url, true);
+                //         xhr2.setRequestHeader("Content-Type", "application/json");
+                //         xhr2.setRequestHeader("Authorization", t.Token);
+                //         xhr2.onreadystatechange = function () {
+                //             if (xhr2.readyState == 4 && xhr2.status === 200) {
+                //                 response = xhr2.responseText;
+                //                 console.log(response);
+                //             }
+                //         };
+                //         xhr2.send(JSON.stringify(data));
+                //     }
+                // };
+                // xhr1.send(JSON.stringify(data));
+                const data = new FormData();
+                data.append("id", aid.value);
+                data.append("title", title.value);
+                data.append("lore", detail.value);
+                data.append("input", cin.value);
+                data.append("output", cout.value);
+                data.append("tips", tip.value);
+                data.append("score",score.value);
+                console.log(data);
+                const xhr1 = new XMLHttpRequest();
+                xhr1.open("POST", "http://localhost:65533/api/problem/add", true);
+                xhr1.setRequestHeader("Authorization", t.Token);
+                // xhr1.setRequestHeader('Content-Type', 'multipart/form-data');
+                xhr1.onreadystatechange = function () {
+                    if (xhr1.readyState == 4 && xhr1.status === 200) {
+                        console.log("Success received 200");
+                        response = xhr1.responseText;
+                        console.log(response);
+
+                        const data1 = new FormData();
+                        if (Inputfile.files.length > 0) {
+                            for (let i = 0; i < Inputfile.files.length; i++) {
+                                console.log(Inputfile.files[i]);
+                                data1.append("input", Inputfile.files[i]);
+                            }
+                        }
+
+                        if (Outputfile.files.length > 0) {
+                            for (let i = 0; i < Outputfile.files.length; i++) {
+                                console.log(Outputfile.files[i]);
+                                data1.append("output", Outputfile.files[i]);
+                            }
+                        }
+
+                        console.log(data1);
+                        const xhr2 = new XMLHttpRequest();
+                        var url = "http://localhost:65533/api/problem/file/add/" + aid.value;
+                        xhr2.open("POST", url, true);
+                        xhr2.setRequestHeader("Authorization", t.Token);
+                        // xhr2.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                        xhr2.onreadystatechange = function () {
+                            if (xhr2.readyState == 4 && xhr2.status === 200) {
+                                response = xhr2.responseText;
+                                console.log(response);
+                                alert("添加成功，将返回题目列表")
+                                self.location = 'question.html'
+                            }
+                            else{
+                                alert("添加失败！")
+                            }
+                        };
+                        xhr2.send(data1);
+                    }
+                    else{
+                        alert("添加失败！")
+                    }
+                };
+                xhr1.send(data);
+
+            });
+        })();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./lib/jquery.js">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/question.css">
+    <link rel="stylesheet" href="./iconfont/download/font_4051106_0wwlj73gl1pq/iconfont.css">
+    <link rel="stylesheet" href="./lib/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <title>题目列表</title>
+</head>
+
+<body>
+    <img src="./img/985330.jpg" alt="图裂了" class="bcg">
+    <div class="header">
+        <div class="left"><span class="title"><a href="" class="active">题目总览</a></span><span class="sort"><a
+                    href="./sort.html">排行榜</a></span></div>
+        <div class="right"><span><span class="imfor"><span class="id"></span><span class="nick"></span></span><a href=""
+                    class="exit">退出登录</a></span></div>
+    </div>
+    <div class="content">
+        <div class="title">题目列表：</div>
+        <div class="add"><a href="./add.html">添加题目</a></div>
+        <ul>
+            <!-- <li><a href="./detail.html"
+                    data-id="1"><span>1.</span>第一题第一题第一题第一题第一题第一题第一题第一题第一题第一题第一题第一题第一题第一题第一题第一题第一题第一题第一题</a></li>
+            <li><a href="./detail.html" data-id="2"><span>2.</span>第一题</a></li>
+            <li><a href="./detail.html" data-id="3"><span>3.</span>第一题</a></li> -->
+        </ul>
+    </div>
+    <!-- <div class="footer">要有底线！</div> -->
+    <script>
+
+     const t = { Token: localStorage.getItem('token') }
+        console.log(t);
+        // const t = localStorage.getItem('token')
+        if (t.Token) {
+            //判断令牌是否过期，如果过期清楚登录状态，如果没有就跳转
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:65533/api/open", true)
+            // xhr.open("POST", "/open"); // 根据实际的后端路由进行设置
+            xhr.setRequestHeader("Authorization", t.Token)
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        // token没过期
+
+                    }
+                    if (xhr.status === 400 || xhr.status === 401) {
+                        // 请求失败，显示错误信息
+                        console.log(1);
+                        localStorage.removeItem('uid')
+                        localStorage.removeItem('token')
+                        alert("登录状态过期，请重新登录！");
+                        self.location = 'index.html'
+                    }
+                }
+            };
+
+
+            xhr.send();
+        }
+        else {
+            alert("登录状态过期，请重新登录！");
+            self.location = 'index.html'
+        }
+        //打开页面获取右上角信息
+        (function () {
+            const id = document.querySelector('.id')
+            id.innerHTML = localStorage.getItem('uid')
+            // const data = {
+            //     username: localStorage.getItem('uid')
+            // }
+            // console.log(data);
+            // const nick = document.querySelector('.nick')
+            // const xhr = new XMLHttpRequest();
+            // xhr.open("POST", "http://localhost:65533/get", true)
+            // // xhr.open("POST", "/get"); // 根据实际的后端路由进行设置
+            // xhr.setRequestHeader("Content-Type", "application/json");
+
+            // xhr.onreadystatechange = function () {
+            //     // if (xhr.readyState === XMLHttpRequest.DONE) {
+            //     // if(xhr.status==200){
+            //     if (xhr.readyState == 4 && xhr.status === 200) {
+            //         // 请求成功，处理响应
+            //         // console.log(1);
+            //         response = xhr.responseText;
+            //         console.log(response);
+
+            //         nick.innerHTML = response
+            //         // }
+            //     }
+            // }
+            // xhr.send(JSON.stringify(data))
+            // // xhr.send(data)
+            const exit = document.querySelector('.exit')
+            exit.addEventListener('click', e => {
+                e.preventDefault()
+                localStorage.removeItem('uid')
+                localStorage.removeItem('token')
+                self.location = 'index.html'
+            })
+        })();
+        (function () {
+            const ul = document.querySelector('ul')
+            ul.addEventListener('click', e => {
+                if (e.target.tagName == 'A') {
+                    localStorage.removeItem('no')
+                    localStorage.setItem('no', e.target.dataset.id)
+                }
+            })
+        })();
+        //获取问题列表
+        (function () {
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:65533/api/list", true)  // 根据实际的后端路由进行设置
+            // xhr.setRequestHeader("Content-Type", "application/json");
+            // xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+              xhr.setRequestHeader("Authorization", t.Token)
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+          
+            // xhr.setRequestHeader("Authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikhhb19wcCIsInRva2VuLXR5cGUiOiJBY2Nlc3NUb2tlbiIsImV4cCI6MTY4NTYzODQ0MiwiaXNzIjoiSGFvX3BwIn0.LPLi08cIk-bhRPOpm30BG84H3tigicZfFIdbp02PNJ4")
+
+            // xhr.send(JSON.stringify(data))
+            s = ""
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status === 200) {
+                    
+                    response = xhr.responseText;
+                    console.log(response);
+                    console.log(typeof response);
+                    const pa = JSON.parse(response);
+                    console.log(typeof pa);
+                    console.log(pa);
+                    pa.Data.forEach(element => {
+                        s += `
+                <li><a href="./detail.html" data-id="${element.ProblemID}"><span>${element.ProblemID}.</span>${element.ProblemTitle}</a></li>
+                `
+                    })
+                    const ul = document.querySelector('ul')
+                    ul.innerHTML = s;
+                }
+
+            };
+            xhr.send()
+
+
+
+
+            //   const data={ "data": [{ "ID": 1, "CreatedAt": "2023-05-25T09:39:17.083Z", "UpdatedAt": "2023-05-25T09:39:17.083Z", "DeletedAt": null, "ProblemID": 1238, "ProblemTitle": "ceshi1", "Author": "Hao_pp" }] }
+            //    console.log(data); 
+            // data = [
+            //     {
+            //         id: "666",
+            //         title: "sss"
+            //     }
+            //     ,
+            //     {
+            //         id: "2",
+            //         title: "bbb"
+            //     }
+            //     ,
+            //     {
+            //         id: "99",
+            //         title: "大逼王成林"
+            //     }
+            // ]
+
+        })(); 
+    </script>
+</body>
+
+</html>

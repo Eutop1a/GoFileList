@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Test</title>
+</head>
+
+<body>
+    <h1>Login Test</h1>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="2021211705">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" value="w0123456789">
+
+        <button type="button" onclick="login()">Login</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function login() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:65533/login", true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            const data = {
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value
+            };
+
+            var formData = 'username=' + encodeURIComponent(data.username) + '&password=' + encodeURIComponent(data.password);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+               
+                    
+                    if (xhr.status == 200) {
+                        // 登录成功
+                        console.log(xhr.responseText);
+                        var response = JSON.parse(xhr.responseText);
+                        console.log(response);
+                    } else {
+                        // 登录失败
+                        console.log(xhr.responseText);
+                        var response = JSON.parse(xhr.responseText);
+                        console.log(response);
+                        console.log("失败");
+                    }
+                }
+            };
+
+            xhr.send(formData);
+        }
+    </script>
+</body>
+
+</html>

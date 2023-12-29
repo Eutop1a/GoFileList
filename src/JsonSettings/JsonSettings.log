@@ -1,0 +1,16 @@
+{"level":"DEBUG","time":"2023-08-18T09:57:53.761+0800","caller":"JsonSettings/main.go:42","msg":"logger init success"}
+{"level":"INFO","time":"2023-08-18T09:58:07.383+0800","caller":"logger/logger.go:78","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203","errors":"","cost":0}
+{"level":"INFO","time":"2023-08-18T09:58:14.971+0800","caller":"JsonSettings/main.go:81","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-08-18T09:58:14.971+0800","caller":"JsonSettings/main.go:89","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-08-18T10:00:20.822+0800","caller":"JsonSettings/main.go:42","msg":"logger init success"}
+{"level":"INFO","time":"2023-08-18T10:00:33.356+0800","caller":"JsonSettings/main.go:81","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-08-18T10:00:33.356+0800","caller":"JsonSettings/main.go:89","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-08-18T10:00:43.991+0800","caller":"JsonSettings/main.go:42","msg":"logger init success"}
+{"level":"INFO","time":"2023-08-18T10:00:49.836+0800","caller":"JsonSettings/main.go:81","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-08-18T10:00:49.836+0800","caller":"JsonSettings/main.go:89","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-08-18T10:01:37.478+0800","caller":"JsonSettings/main.go:42","msg":"logger init success"}
+{"level":"INFO","time":"2023-08-18T10:01:43.287+0800","caller":"JsonSettings/main.go:81","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-08-18T10:01:43.288+0800","caller":"JsonSettings/main.go:89","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-08-18T10:16:57.837+0800","caller":"JsonSettings/main.go:50","msg":"logger init success"}
+{"level":"INFO","time":"2023-08-18T10:17:00.058+0800","caller":"JsonSettings/main.go:89","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-08-18T10:17:00.058+0800","caller":"JsonSettings/main.go:97","msg":"Server exiting"}

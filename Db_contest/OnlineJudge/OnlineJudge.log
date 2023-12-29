@@ -1,0 +1,168 @@
+{"level":"INFO","time":"2023-12-24T14:15:31.874+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-24T14:15:31.882+0800","caller":"mysql/connection.go:43","msg":"connect DB failed, err: %v\n","error":"dial tcp: lookup tcp/%!s(int=3306): getaddrinfow: The specified class was not found."}
+{"level":"INFO","time":"2023-12-24T14:17:45.761+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-24T14:17:45.769+0800","caller":"mysql/connection.go:45","msg":"connect DB failed, err: %v\n","error":"dial tcp: lookup tcp/%!s(int=3306): getaddrinfow: The specified class was not found."}
+{"level":"INFO","time":"2023-12-24T14:18:09.022+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-24T14:18:20.935+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-24T14:18:35.789+0800","caller":"logger/logger.go:81","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0006448}
+{"level":"ERROR","time":"2023-12-24T14:18:58.779+0800","caller":"score/add_score.go:18","msg":"TokenTimeOut"}
+{"level":"INFO","time":"2023-12-24T14:18:58.779+0800","caller":"logger/logger.go:81","msg":"/api/changeScore","status":403,"method":"POST","path":"/api/changeScore","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.000229}
+{"level":"INFO","time":"2023-12-24T14:19:57.654+0800","caller":"logger/logger.go:81","msg":"/register","status":200,"method":"POST","path":"/register","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0047073}
+{"level":"ERROR","time":"2023-12-24T14:20:08.066+0800","caller":"user/check_token.go:20","msg":"Invalid token"}
+{"level":"INFO","time":"2023-12-24T14:20:08.067+0800","caller":"logger/logger.go:81","msg":"/api/open","status":403,"method":"GET","path":"/api/open","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0007367}
+{"level":"ERROR","time":"2023-12-24T14:20:18.167+0800","caller":"user/check_token.go:20","msg":"Invalid token"}
+{"level":"INFO","time":"2023-12-24T14:20:18.167+0800","caller":"logger/logger.go:81","msg":"/api/open","status":403,"method":"GET","path":"/api/open","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0003595}
+{"level":"INFO","time":"2023-12-24T14:21:30.650+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-24T14:21:33.227+0800","caller":"logger/logger.go:81","msg":"/api/changeScore","status":200,"method":"POST","path":"/api/changeScore","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.004073}
+{"level":"INFO","time":"2023-12-24T14:21:36.826+0800","caller":"logger/logger.go:81","msg":"/api/get","status":200,"method":"POST","path":"/api/get","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0007685}
+{"level":"INFO","time":"2023-12-24T14:21:39.499+0800","caller":"logger/logger.go:81","msg":"/api/open","status":200,"method":"GET","path":"/api/open","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.000311}
+{"level":"INFO","time":"2023-12-24T14:24:49.435+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-24T14:24:53.314+0800","caller":"logger/logger.go:81","msg":"/api/open","status":200,"method":"GET","path":"/api/open","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0005483}
+{"level":"ERROR","time":"2023-12-24T14:25:09.139+0800","caller":"user/check_token.go:15","msg":"Invalid token"}
+{"level":"INFO","time":"2023-12-24T14:25:09.139+0800","caller":"logger/logger.go:81","msg":"/api/open","status":403,"method":"GET","path":"/api/open","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0}
+{"level":"ERROR","time":"2023-12-24T14:25:15.139+0800","caller":"user/check_token.go:15","msg":"Invalid token"}
+{"level":"INFO","time":"2023-12-24T14:25:15.139+0800","caller":"logger/logger.go:81","msg":"/api/open","status":403,"method":"GET","path":"/api/open","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0001112}
+{"level":"INFO","time":"2023-12-24T14:25:23.816+0800","caller":"logger/logger.go:81","msg":"/api/open","status":200,"method":"GET","path":"/api/open","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0009786}
+{"level":"INFO","time":"2023-12-24T14:27:43.600+0800","caller":"logger/logger.go:81","msg":"/api/open","status":200,"method":"GET","path":"/api/open","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0}
+{"level":"INFO","time":"2023-12-24T14:28:22.944+0800","caller":"logger/logger.go:81","msg":"/api/problem/file/add/000000002","status":200,"method":"POST","path":"/api/problem/file/add/000000002","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0067361}
+{"level":"INFO","time":"2023-12-24T14:30:01.004+0800","caller":"logger/logger.go:81","msg":"/api/problem/add/000000002","status":200,"method":"POST","path":"/api/problem/add/000000002","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0}
+{"level":"INFO","time":"2023-12-24T14:31:11.851+0800","caller":"logger/logger.go:81","msg":"/api/problem/add/000000002","status":200,"method":"POST","path":"/api/problem/add/000000002","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0}
+{"level":"INFO","time":"2023-12-24T14:31:51.766+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-24T14:31:54.186+0800","caller":"logger/logger.go:81","msg":"/api/problem/add/000000002","status":200,"method":"POST","path":"/api/problem/add/000000002","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0003945}
+{"level":"INFO","time":"2023-12-24T14:32:12.794+0800","caller":"logger/logger.go:81","msg":"/api/problem/add","status":200,"method":"POST","path":"/api/problem/add","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0059}
+{"level":"ERROR","time":"2023-12-24T14:32:51.738+0800","caller":"logger/logger.go:123","msg":"[Recovery from panic]","error":"runtime error: slice bounds out of range [7:0]","request":"POST /api/problem/0000002 HTTP/1.1\r\nHost: localhost:65533\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nConnection: keep-alive\r\nContent-Length: 0\r\nPostman-Token: 53bf0e87-577c-4fbc-95df-3250874170df\r\nUser-Agent: PostmanRuntime/7.36.0\r\n\r\n","stack":"goroutine 42 [running]:\nruntime/debug.Stack()\n\tD:/Program Files/Go/src/runtime/debug/stack.go:24 +0x5e\nOnlineJudge/routes.SetUp.GinRecovery.func5.1()\n\tD:/JtBrainFiles/GoFiles/Db_contest/OnlineJudge/logger/logger.go:126 +0x290\npanic({0x8ffa20?, 0xc000022978?})\n\tD:/Program Files/Go/src/runtime/panic.go:914 +0x21f\nOnlineJudge/middlewares.AuthorizationMiddleWare(0xc000402300)\n\tD:/JtBrainFiles/GoFiles/Db_contest/OnlineJudge/middlewares/jwt.go:13 +0xe5\ngithub.com/gin-gonic/gin.(*Context).Next(...)\n\tC:/Users/wang/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174\nOnlineJudge/routes.SetUp.func1(0xc000402300)\n\tD:/JtBrainFiles/GoFiles/Db_contest/OnlineJudge/routes/route.go:32 +0xe9\ngithub.com/gin-gonic/gin.(*Context).Next(0xc000402300)\n\tC:/Users/wang/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x2b\nOnlineJudge/routes.SetUp.GinRecovery.func5(0xc00039b2e0?)\n\tD:/JtBrainFiles/GoFiles/Db_contest/OnlineJudge/logger/logger.go:137 +0x52\ngithub.com/gin-gonic/gin.(*Context).Next(0xc000402300)\n\tC:/Users/wang/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174 +0x2b\nOnlineJudge/routes.SetUp.GinLogger.func4(0xc000402300)\n\tD:/JtBrainFiles/GoFiles/Db_contest/OnlineJudge/logger/logger.go:78 +0x75\ngithub.com/gin-gonic/gin.(*Context).Next(...)\n\tC:/Users/wang/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174\ngithub.com/gin-gonic/gin.CustomRecoveryWithWriter.func1(0xc000402300)\n\tC:/Users/wang/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102 +0x7a\ngithub.com/gin-gonic/gin.(*Context).Next(...)\n\tC:/Users/wang/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174\ngithub.com/gin-gonic/gin.LoggerWithConfig.func1(0xc000402300)\n\tC:/Users/wang/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/logger.go:240 +0xde\ngithub.com/gin-gonic/gin.(*Context).Next(...)\n\tC:/Users/wang/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest(0xc000239380, 0xc000402300)\n\tC:/Users/wang/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620 +0x65b\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP(0xc000239380, {0xa5f1f0?, 0xc00016e380}, 0xc000402500)\n\tC:/Users/wang/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576 +0x1dd\nnet/http.serverHandler.ServeHTTP({0xc0004a9cb0?}, {0xa5f1f0?, 0xc00016e380?}, 0x6?)\n\tD:/Program Files/Go/src/net/http/server.go:2938 +0x8e\nnet/http.(*conn).serve(0xc000362a20, {0xa60398, 0xc0004a9bc0})\n\tD:/Program Files/Go/src/net/http/server.go:2009 +0x5f4\ncreated by net/http.(*Server).Serve in goroutine 1\n\tD:/Program Files/Go/src/net/http/server.go:3086 +0x5cb\n"}
+{"level":"INFO","time":"2023-12-24T14:32:51.739+0800","caller":"logger/logger.go:81","msg":"/api/problem/0000002","status":500,"method":"POST","path":"/api/problem/0000002","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0008043}
+{"level":"ERROR","time":"2023-12-24T14:32:56.557+0800","caller":"problem_operator/get_problem.go:30","msg":"get problem error"}
+{"level":"INFO","time":"2023-12-24T14:32:56.557+0800","caller":"logger/logger.go:81","msg":"/api/problem/0000002","status":403,"method":"POST","path":"/api/problem/0000002","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0014347}
+{"level":"ERROR","time":"2023-12-24T14:33:09.707+0800","caller":"problem_operator/get_problem.go:30","msg":"get problem error"}
+{"level":"INFO","time":"2023-12-24T14:33:09.707+0800","caller":"logger/logger.go:81","msg":"/api/problem/0000002","status":403,"method":"POST","path":"/api/problem/0000002","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0013851}
+{"level":"ERROR","time":"2023-12-24T14:34:08.694+0800","caller":"problem_operator/get_problem.go:30","msg":"get problem error"}
+{"level":"INFO","time":"2023-12-24T14:34:08.694+0800","caller":"logger/logger.go:81","msg":"/api/problem/2","status":403,"method":"POST","path":"/api/problem/2","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0021575}
+{"level":"INFO","time":"2023-12-24T14:34:52.708+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-24T14:34:54.972+0800","caller":"problem_operator/get_problem.go:31","msg":"get problem error"}
+{"level":"INFO","time":"2023-12-24T14:34:54.972+0800","caller":"logger/logger.go:81","msg":"/api/problem/2","status":403,"method":"POST","path":"/api/problem/2","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.001313}
+{"level":"INFO","time":"2023-12-24T14:35:34.214+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-24T14:35:54.472+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-24T14:35:56.406+0800","caller":"problem_operator/get_problem.go:31","msg":"get problem error"}
+{"level":"INFO","time":"2023-12-24T14:35:56.406+0800","caller":"logger/logger.go:81","msg":"/api/problem/2","status":403,"method":"POST","path":"/api/problem/2","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0010335}
+{"level":"INFO","time":"2023-12-24T14:37:15.344+0800","caller":"logger/logger.go:81","msg":"/api/problem/2","status":200,"method":"POST","path":"/api/problem/2","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0012858}
+{"level":"INFO","time":"2023-12-24T14:40:09.188+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-24T14:40:12.748+0800","caller":"logger/logger.go:81","msg":"/api/problem/2","status":200,"method":"POST","path":"/api/problem/2","query":"","ip":"::1","user-agent":"PostmanRuntime/7.36.0","errors":"","cost":0.0011831}
+{"level":"INFO","time":"2023-12-24T17:42:40.774+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-24T18:52:12.801+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-24T20:10:45.753+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-24T20:13:24.615+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-24T20:14:33.706+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-24T20:19:55.167+0800","caller":"score/sort.go:27","msg":"TokenTimeOut"}
+{"level":"ERROR","time":"2023-12-24T20:20:18.936+0800","caller":"user/login.go:36","msg":"SignUp with invalid username or password"}
+{"level":"INFO","time":"2023-12-24T23:39:35.026+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T19:41:36.275+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-25T19:42:17.099+0800","caller":"user/user_models.go:54","msg":"SignUp with invalid username or password"}
+{"level":"ERROR","time":"2023-12-25T19:42:33.533+0800","caller":"controller/user.go:93","msg":"Signup with invalid username or password"}
+{"level":"INFO","time":"2023-12-25T20:41:32.007+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-25T20:42:04.278+0800","caller":"controller/score.go:28","msg":"TokenTimeout"}
+{"level":"ERROR","time":"2023-12-25T20:42:04.280+0800","caller":"services/score.go:39","msg":"database select  error","error":"record not found"}
+{"level":"INFO","time":"2023-12-25T20:42:50.435+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-25T20:42:53.725+0800","caller":"controller/score.go:28","msg":"TokenTimeout"}
+{"level":"ERROR","time":"2023-12-25T20:42:53.727+0800","caller":"services/score.go:39","msg":"database select  error","error":"record not found"}
+{"level":"INFO","time":"2023-12-25T20:43:59.502+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T20:44:31.620+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-25T20:44:33.384+0800","caller":"controller/score.go:30","msg":"TokenTimeout"}
+{"level":"INFO","time":"2023-12-25T20:49:33.849+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T20:50:28.507+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T20:51:11.509+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T20:54:38.472+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T21:00:53.224+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T21:01:40.864+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T21:21:23.715+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-25T21:21:28.295+0800","caller":"controller/score.go:66","msg":"TokenTimeout"}
+{"level":"INFO","time":"2023-12-25T21:21:59.434+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-25T21:22:03.972+0800","caller":"controller/score.go:66","msg":"TokenTimeout"}
+{"level":"INFO","time":"2023-12-25T21:22:29.013+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-25T21:22:35.710+0800","caller":"controller/score.go:66","msg":"TokenTimeout"}
+{"level":"ERROR","time":"2023-12-25T21:24:00.950+0800","caller":"controller/score.go:66","msg":"TokenTimeout"}
+{"level":"INFO","time":"2023-12-25T21:24:11.274+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-25T21:24:12.803+0800","caller":"controller/score.go:66","msg":"TokenTimeout"}
+{"level":"ERROR","time":"2023-12-25T21:25:05.585+0800","caller":"controller/score.go:26","msg":"TokenTimeout"}
+{"level":"INFO","time":"2023-12-25T21:27:57.403+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-25T21:28:32.929+0800","caller":"controller/check.go:55","msg":"TokenTimeOut"}
+{"level":"INFO","time":"2023-12-25T21:30:30.280+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-25T21:30:33.213+0800","caller":"services/check.go:30","msg":"username 2021211705 already exists"}
+{"level":"INFO","time":"2023-12-25T21:30:49.786+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T22:07:40.862+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T22:23:36.439+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T22:24:46.305+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T22:37:41.159+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T22:43:32.739+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T22:44:08.465+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T22:44:39.010+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T22:45:59.528+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T22:47:48.675+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T22:48:49.491+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T22:50:55.212+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T23:05:42.172+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-25T23:06:18.096+0800","caller":"services/user.go:35","msg":"username 2021211705 already exists"}
+{"level":"ERROR","time":"2023-12-25T23:06:36.788+0800","caller":"services/user.go:35","msg":"username 2021211705 already exists"}
+{"level":"INFO","time":"2023-12-25T23:06:57.146+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T23:07:18.534+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-25T23:09:34.212+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-26T12:11:09.467+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-26T12:11:52.040+0800","caller":"controller/user.go:103","msg":"SignUp with invalid username or password"}
+{"level":"ERROR","time":"2023-12-26T12:12:30.945+0800","caller":"controller/user.go:103","msg":"SignUp with invalid username or password"}
+{"level":"INFO","time":"2023-12-26T12:13:04.479+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-26T12:13:09.534+0800","caller":"controller/user.go:103","msg":"invalid parameter"}
+{"level":"INFO","time":"2023-12-26T12:13:36.598+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-26T12:13:39.674+0800","caller":"controller/user.go:105","msg":"invalid parameter"}
+{"level":"INFO","time":"2023-12-26T12:14:13.311+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-26T12:14:14.430+0800","caller":"controller/user.go:107","msg":"invalid parameter"}
+{"level":"INFO","time":"2023-12-26T12:14:58.292+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-26T12:15:00.050+0800","caller":"controller/user.go:107","msg":"invalid parameter"}
+{"level":"INFO","time":"2023-12-26T12:15:19.210+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-26T12:16:40.302+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-26T12:18:54.562+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-26T12:18:57.066+0800","caller":"services/user.go:67","msg":"RegAdmin error, internal mysql error"}
+{"level":"ERROR","time":"2023-12-26T12:19:16.390+0800","caller":"services/user.go:36","msg":"username 12374945 already exists"}
+{"level":"INFO","time":"2023-12-26T12:20:46.624+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-26T12:20:48.573+0800","caller":"users/admin.go:26","msg":"User exist, do not need to RegAdmin"}
+{"level":"ERROR","time":"2023-12-26T12:20:48.574+0800","caller":"services/user.go:67","msg":"RegAdmin error, internal mysql error"}
+{"level":"INFO","time":"2023-12-26T12:26:47.233+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-26T12:26:50.079+0800","caller":"users/admin.go:26","msg":"User exist, do not need to RegAdmin"}
+{"level":"ERROR","time":"2023-12-26T12:26:50.080+0800","caller":"services/user.go:70","msg":"User 12374945 aleardy is admin"}
+{"level":"INFO","time":"2023-12-26T12:27:58.553+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-26T12:28:00.954+0800","caller":"users/admin.go:26","msg":"User exist, do not need to RegAdmin"}
+{"level":"ERROR","time":"2023-12-26T12:28:00.954+0800","caller":"services/user.go:70","msg":"User 12374945 aleardy is admin"}
+{"level":"INFO","time":"2023-12-26T12:28:50.428+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-26T12:28:54.423+0800","caller":"users/admin.go:26","msg":"User exist, do not need to RegAdmin"}
+{"level":"ERROR","time":"2023-12-26T12:28:54.423+0800","caller":"services/user.go:70","msg":"User 12374945 aleardy is admin"}
+{"level":"INFO","time":"2023-12-26T12:29:21.940+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-26T12:29:22.938+0800","caller":"services/user.go:70","msg":"User 12374945 aleardy is admin"}
+{"level":"INFO","time":"2023-12-26T12:31:45.559+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-26T12:31:47.838+0800","caller":"services/user.go:70","msg":"User 12374945 aleardy is admin"}
+{"level":"INFO","time":"2023-12-26T16:10:26.173+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-26T16:11:15.370+0800","caller":"controller/score.go:70","msg":"TokenTimeout"}
+{"level":"INFO","time":"2023-12-26T16:46:53.280+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-26T18:30:00.970+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-26T18:30:20.931+0800","caller":"controller/judge.go:28","msg":"TokenTimeOut"}
+{"level":"ERROR","time":"2023-12-26T18:30:35.190+0800","caller":"controller/judge.go:28","msg":"TokenTimeOut"}
+{"level":"ERROR","time":"2023-12-26T18:33:43.526+0800","caller":"controller/check.go:26","msg":"Invalid token"}
+{"level":"INFO","time":"2023-12-26T18:58:19.320+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-26T18:58:25.071+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-26T19:03:46.824+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-26T19:09:02.340+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-26T19:52:01.458+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-26T19:52:08.959+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-26T19:55:34.739+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-26T21:39:48.109+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-26T22:15:12.919+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-26T23:11:06.310+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-27T12:45:22.276+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-27T12:45:23.213+0800","caller":"controller/check.go:26","msg":"Invalid token"}
+{"level":"INFO","time":"2023-12-27T18:18:52.910+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-27T18:53:23.372+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-27T19:03:49.322+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-27T19:04:45.947+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-27T22:42:08.598+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-27T22:45:30.549+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"INFO","time":"2023-12-27T22:45:37.846+0800","caller":"logger/logger.go:48","msg":"init logger success"}
+{"level":"ERROR","time":"2023-12-27T22:46:47.858+0800","caller":"services/score.go:52","msg":"database get problem id: 1 error","error":"Error 1054 (42S22): Unknown column 'ProblemID' in 'where clause'"}
+{"level":"INFO","time":"2023-12-27T22:48:09.215+0800","caller":"logger/logger.go:48","msg":"init logger success"}

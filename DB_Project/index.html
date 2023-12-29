@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sort By Score</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "http://pc.mamahaha.work:65533/sort",
+                type: "POST",
+                dataType: "json",
+                crossDomain: true, // 设置跨域请求
+                success: function (data) {
+                    // 用户数据获取成功
+                    displayUserList(data);
+                },
+                error: function (xhr, status, error) {
+                    // 发生错误时处理
+                    console.log("Error:", error);
+                }
+            });
+
+            function displayUserList(users) {
+                var userList = $("#user-list");
+                userList.empty();
+
+                for (var i = 0; i < users.length; i++) {
+                    var user = users[i];
+                    var listItem = $("<li>").text("Username: " + user.Username + ", Score: " + user.Score);
+                    userList.append(listItem);
+                }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <h1>User List Sorted By Score</h1>
+    <ul id="user-list"></ul>
+</body>
+
+</html>

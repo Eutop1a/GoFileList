@@ -1,0 +1,67 @@
+.bcg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -30;
+}
+.content {
+  font-size: 20px;
+  width: 1136px;
+  margin: 180px auto;
+  padding: 50px;
+  border-radius: 5px;
+  background-color: white;
+}
+.content .tian {
+  margin-bottom: 30px;
+  font-size: 30px;
+  color: gray;
+}
+.content div {
+  text-align: left;
+}
+.content #Inputfile,
+.content #Outputfile {
+  transform: translate(105px, -56px);
+}
+.content .in,
+.content .out,
+.content .tip,
+.content .score,
+.content .ctitle,
+.content .cdetail,
+.content .answer,
+.content .infile,
+.content .outfile {
+  display: flex;
+  align-items: flex-start;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+  margin-bottom: 30px;
+}
+.content .in textarea,
+.content .out textarea,
+.content .tip textarea,
+.content .score textarea,
+.content .ctitle textarea,
+.content .cdetail textarea,
+.content .answer textarea,
+.content .infile textarea,
+.content .outfile textarea {
+  margin-left: 5px;
+  height: 38px;
+  width: 300px;
+  padding: 5px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  font-weight: normal;
+}
+.content .cdetail textarea {
+  height: 200px;
+  width: 520px;
+}

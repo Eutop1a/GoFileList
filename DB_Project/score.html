@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Test</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // 提交成绩
+    function submitScore() {
+      var username = document.getElementById("username").value;
+      var score = document.getElementById("score").value;
+
+      var data = {
+        "username": username,
+      };
+      console.log(JSON.stringify(data))
+      $.ajax({
+        //url: "http://pc.mamahaha.work:65533/changeScore",
+        url: "http://localhost:65533/changeScore",
+        type: "POST",
+        dataType: "json",
+        crossDomain: true,
+        data: JSON.stringify(data),
+        contentType: "application/json",
+        success: function (response) {
+          console.log("Score changed successfully");
+        },
+        error: function (xhr, status, error) {
+          console.error("Error changing score:", error);
+        }
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <label for="username">Username:</label>
+  <input type="text" id="username"><br><br>
+  <label for="score">Score:</label>
+  <input type="number" id="score"><br><br>
+  <button onclick="submitScore()">Submit Score</button>
+</body>
+
+</html>

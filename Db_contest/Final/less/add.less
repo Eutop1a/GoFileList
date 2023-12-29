@@ -1,0 +1,84 @@
+.bcg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -30;
+}
+
+.content {
+
+    font-size: 20px;
+    width: 1136px;
+    margin: 180px auto;
+    padding: 50px;
+    border-radius: 5px;
+    background-color: white;
+
+    .tian {
+        margin-bottom: 30px;
+        font-size: 30px;
+        color: gray;
+    }
+
+    div {
+        text-align: left;
+    }
+
+    #Inputfile,
+    #Outputfile {
+        transform: translate(105px, -56px)
+    }
+
+    .in,
+    .out,
+    .tip,
+    .score,
+    .ctitle,
+    .cdetail,
+    .answer,
+    .infile,
+    .outfile {
+        display: flex;
+        align-items: flex-start;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 20px;
+        margin-bottom: 30px;
+
+        textarea {
+            margin-left: 5px;
+            height: 38px;
+            width: 300px;
+            padding: 5px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: none;
+            font-weight: normal;
+        }
+
+        // width: 100%;
+        //     
+        //     border: 1px solid #ccc;
+        //     font-family: monospace;
+        //    
+        //     padding: 5px;
+        //     resize: none;
+    }
+
+    .cdetail {
+        textarea {
+            height: 200px;
+            width: 520px;
+        }
+    }
+
+    // .answer {
+    //     textarea {
+    //         height: 100px;
+    //         width: 520px;
+    //     }
+    // }
+}

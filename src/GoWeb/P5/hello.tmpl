@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TEST</title>
+</head>
+<body>
+    <p>姓名： {{- .u1.Name -}}</p> <!-- 移除左右的空格 -->
+    <p>年龄： {{ .u1.Age }}</p>
+    <p>性别： {{ .u1.Gender }}</p>
+
+    <p>姓名： {{ .m1.name }}</p>
+    <p>性别： {{ .m1.gender }}</p>
+    <p>年龄： {{ .m1.age }}</p>
+    {{ $v1 := 100}} <!-- 定义变量 -->
+    <hr>
+    {{ $age := .m1.age}}
+    {{ if $v1 }}
+    {{ $v1 }}
+    {{ else }}
+     Nothing
+    {{ end }}
+    <hr>
+    {{ if lt .m1.age 22}}   <!-- lt 是比较后面的小于的运算符 -->
+    good good learn
+    {{ else }}
+    work well
+    {{ end }}
+    <hr>
+    {{ range $idx, $hobby := .hobby }}
+        <p>{{$idx}} - {{$hobby}}</p>
+    {{ else }}
+        啥爱好也没有。
+    {{ end }}
+    <hr>
+    {{ with .m1 }}
+        <p>姓名： {{ .name }}</p>
+        <p>性别： {{ .gender }}</p>
+        <p>年龄： {{ .age }}</p>
+    {{ end }}
+    <hr>
+    {{ index .hobby 2}}
+</body>
+</html>

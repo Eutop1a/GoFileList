@@ -1,0 +1,28 @@
+{"level":"DEBUG","time":"2023-08-16T17:50:20.636+0800","caller":"webapp/main.go:38","msg":"logger init success"}
+{"level":"ERROR","time":"2023-08-16T17:50:20.647+0800","caller":"mysql/mysql.go:26","msg":"connect DB failed, err: %v\n","error":"dial tcp: lookup tcp/%!s(int=3306): getaddrinfow: The specified class was not found."}
+{"level":"DEBUG","time":"2023-08-16T17:51:14.458+0800","caller":"webapp/main.go:38","msg":"logger init success"}
+{"level":"ERROR","time":"2023-08-16T17:51:14.466+0800","caller":"mysql/mysql.go:26","msg":"connect DB failed, err: %v\n","error":"dial tcp: lookup tcp/%!s(int=3306): getaddrinfow: The specified class was not found."}
+{"level":"DEBUG","time":"2023-08-16T17:51:47.109+0800","caller":"webapp/main.go:38","msg":"logger init success"}
+{"level":"ERROR","time":"2023-08-16T17:51:47.117+0800","caller":"mysql/mysql.go:26","msg":"connect DB failed, err: %v\n","error":"dial tcp: lookup tcp/%!s(int=3306): getaddrinfow: The specified class was not found."}
+{"level":"DEBUG","time":"2023-08-16T17:53:24.789+0800","caller":"webapp/main.go:38","msg":"logger init success"}
+{"level":"DEBUG","time":"2023-08-16T17:53:44.270+0800","caller":"webapp/main.go:38","msg":"logger init success"}
+{"level":"DEBUG","time":"2023-08-16T17:53:59.452+0800","caller":"webapp/main.go:38","msg":"logger init success"}
+{"level":"DEBUG","time":"2023-08-16T17:57:12.666+0800","caller":"webapp/main.go:38","msg":"logger init success"}
+{"level":"DEBUG","time":"2023-08-16T17:57:18.767+0800","caller":"webapp/main.go:38","msg":"logger init success"}
+{"level":"DEBUG","time":"2023-08-16T17:58:41.420+0800","caller":"webapp/main.go:38","msg":"logger init success"}
+{"level":"DEBUG","time":"2023-08-16T18:02:03.725+0800","caller":"webapp/main.go:38","msg":"logger init success"}
+{"level":"INFO","time":"2023-08-16T18:02:21.147+0800","caller":"logger/logger.go:73","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203","errors":"","cost":0}
+{"level":"INFO","time":"2023-08-16T18:02:21.210+0800","caller":"logger/logger.go:73","msg":"/favicon.ico","status":404,"method":"GET","path":"/favicon.ico","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203","errors":"","cost":0}
+{"level":"INFO","time":"2023-08-16T18:02:26.005+0800","caller":"webapp/main.go:77","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-08-16T18:02:27.173+0800","caller":"webapp/main.go:85","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-08-16T18:02:39.563+0800","caller":"webapp/main.go:38","msg":"logger init success"}
+{"level":"DEBUG","time":"2023-08-16T18:03:02.193+0800","caller":"webapp/main.go:38","msg":"logger init success"}
+{"level":"INFO","time":"2023-08-16T18:03:18.056+0800","caller":"webapp/main.go:77","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-08-16T18:03:18.056+0800","caller":"webapp/main.go:85","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-08-17T16:06:04.425+0800","caller":"webapp/main.go:38","msg":"logger init success"}
+{"level":"DEBUG","time":"2023-08-17T16:06:40.636+0800","caller":"webapp/main.go:38","msg":"logger init success"}
+{"level":"INFO","time":"2023-08-17T16:06:45.310+0800","caller":"webapp/main.go:77","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-08-17T16:06:45.310+0800","caller":"webapp/main.go:85","msg":"Server exiting"}
+{"level":"DEBUG","time":"2023-08-17T16:16:22.976+0800","caller":"webapp/main.go:38","msg":"logger init success"}
+{"level":"DEBUG","time":"2023-08-17T16:21:21.995+0800","caller":"webapp/main.go:38","msg":"logger init success"}
+{"level":"DEBUG","time":"2023-08-17T16:31:20.804+0800","caller":"webapp/main.go:42","msg":"logger init success"}

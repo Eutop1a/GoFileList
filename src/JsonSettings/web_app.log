@@ -1,0 +1,6 @@
+{"level":"DEBUG","time":"2023-08-18T09:49:55.596+0800","caller":"JsonSettings/main.go:42","msg":"logger init success"}
+{"level":"DEBUG","time":"2023-08-18T09:50:41.256+0800","caller":"JsonSettings/main.go:42","msg":"logger init success"}
+{"level":"INFO","time":"2023-08-18T09:50:50.570+0800","caller":"logger/logger.go:78","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203","errors":"","cost":0}
+{"level":"INFO","time":"2023-08-18T09:50:50.636+0800","caller":"logger/logger.go:78","msg":"/favicon.ico","status":404,"method":"GET","path":"/favicon.ico","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.203","errors":"","cost":0}
+{"level":"INFO","time":"2023-08-18T09:51:01.680+0800","caller":"JsonSettings/main.go:81","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2023-08-18T09:51:01.680+0800","caller":"JsonSettings/main.go:89","msg":"Server exiting"}

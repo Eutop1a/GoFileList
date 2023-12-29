@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./lib/jquery.js">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/detail.css">
+    <link rel="stylesheet" href="./iconfont/download/font_4051106_0wwlj73gl1pq/iconfont.css">
+    <link rel="stylesheet" href="./lib/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <title>问题详情</title>
+</head>
+
+<body>
+    <img src="./img/985330.jpg" alt="图裂了" class="bcg">
+    <div class="header">
+        <div class="left"><span class="title"><a href="./question.html">题目总览</a></span><span class="sort"><a
+                    href="./sort.html">排行榜</a></span></div>
+        <div class="right"><span><span class="imfor"><span class="id"></span><span class="nick"></span></span><a href=""
+                    class="exit">退出登录</a></span></div>
+    </div>
+    <div class="content">
+        <div class="change">
+            <!-- <div class="ctitle">You can Solve a Geometry Problem too</div>
+            <div class="cdetail">Many geometry（几何）problems were designed in the ACM/ICPC. And now, I also prepare a
+                geometry
+                problem for this final exam.
+                According to the experience of many ACMers, geometry problems are always much trouble, but this problem
+                is
+                very easy,
+                after all we are now attending an exam, not a contest :)
+                Give you N (1<=N<=100) segments（线段）, please output the number of all intersections（交点）. You should count
+                    repeatedly if M (M>2) segments intersect at the same point.
+            </div>
+            <div>输入样例: <br>
+                <div class="in">2
+                    0.00 0.00 1.00 1.00
+                    0.00 1.00 1.00 0.00
+                    3
+                    0.00 0.00 1.00 1.00
+                    0.00 1.00 1.00 0.000
+                    0.00 0.00 1.00 0.00
+                    0</div>
+            </div>
+            <div>输出样例：<br>
+                <div class="out">2 2 2
+                </div>
+            </div>
+          
+            <div>提示：
+                <div class="tip">123</div>
+            </div>
+            <div>作者：
+                <div class="author">hao_pp</div>
+            </div> -->
+        </div>
+
+        <div class="tijiao">请将代码写入下框中提交(点击右侧可切换语言)
+            <span id="a1000">答案正确</span>
+            <span id="a1001">答案错误</span>
+            <span id="a1002">编译错误</span>
+            <span id="a1003">运行超时</span>
+            <span id="a1004">运行时错误</span>
+            <span id="a1005">内存超限</span>
+            <span id="a1010">系统错误</span>
+        </div>
+
+        <div class="gg">
+            <select class="g">
+                <option value="g++" selected>C++</option>
+                <option value="python">Python</option>
+                <option value="java" >Java</option>
+                <option value="go">Go</option>
+            </select>
+            <textarea class="code"></textarea>
+        </div>
+
+
+
+        <button type="button" class="btn btn-default btn-lg">提交</button>
+
+    </div>
+    <!-- <div class="footer">要有底线！</div> -->
+    <script>
+
+
+        const t = { Token: localStorage.getItem('token') }
+        console.log(t);
+        // const t = localStorage.getItem('token')
+        if (t.Token) {
+            //判断令牌是否过期，如果过期清楚登录状态，如果没有就跳转
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:65533/api/open", true)
+            // xhr.open("POST", "/open"); // 根据实际的后端路由进行设置
+            xhr.setRequestHeader("Authorization", t.Token)
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        // token没过期
+
+                    }
+                    if (xhr.status === 400 || xhr.status === 401) {
+                        // 请求失败，显示错误信息
+                        console.log(1);
+                        localStorage.removeItem('uid')
+                        localStorage.removeItem('token')
+                        alert("登录状态过期，请重新登录！");
+                        self.location = 'index.html'
+                    }
+                }
+            };
+
+
+            xhr.send();
+        }
+        else {
+            alert("登录状态过期，请重新登录！");
+            self.location = 'index.html'
+        }
+        //打开页面获取右上角信息
+        (function () {
+            const id = document.querySelector('.id')
+            id.innerHTML = localStorage.getItem('uid')
+            const data = {
+                username: localStorage.getItem('uid')
+            }
+            console.log(data);
+            // const nick = document.querySelector('.nick')
+            // const xhr = new XMLHttpRequest();
+            // xhr.open("POST", "http://localhost:65533/get", true)
+            // // xhr.open("POST", "/get"); // 根据实际的后端路由进行设置
+            // // xhr.setRequestHeader("Content-Type", "application/json");
+            // xhr.send(JSON.stringify(data))
+            // xhr.onreadystatechange = function () {
+            //     if (xhr.readyState === XMLHttpRequest.DONE) {
+            //         if (xhr.readyState == 4 && xhr.status === 200) {
+            //             // 请求成功，处理响应
+            //             response = xhr.responseText;
+            //             console.log(response);
+            //             nick.innerHTML = response
+            //         }
+            //     }
+            // };
+            const exit = document.querySelector('.exit')
+            exit.addEventListener('click', e => {
+                e.preventDefault()
+                localStorage.removeItem('uid')
+                localStorage.removeItem('token')
+                self.location = 'index.html'
+            })
+        })();
+
+
+
+        (function () {
+            const a00 = document.querySelector('#a1000')
+            const a01 = document.querySelector('#a1001')
+            const a02 = document.querySelector('#a1002')
+            const a03 = document.querySelector('#a1003')
+            const a04 = document.querySelector('#a1004')
+            const a05 = document.querySelector('#a1005')
+            const a10 = document.querySelector('#a1010')
+            const btn = document.querySelector('.btn')
+            const code = document.querySelector('.code')
+
+            // 获取 select 元素
+            var selectElement = document.querySelector('.g');
+            var selectedText = selectElement.options[selectElement.selectedIndex].text;
+            var lan= selectedText
+            console.log(lan);
+            // 添加 change 事件监听器
+            selectElement.addEventListener('change', function () {
+
+                var selectedText = selectElement.options[selectElement.selectedIndex].text;
+                console.log(selectedText);
+                lan = selectedText
+                // 在这里你可以根据需要更新页面上的其他元素或执行其他操作
+            });
+
+
+            btn.addEventListener('click', e => {
+                e.preventDefault()
+                a00.style.display = 'none'
+                a01.style.display = 'none'
+                a02.style.display = 'none'
+                a03.style.display = 'none'
+                a04.style.display = 'none'
+                a05.style.display = 'none'
+                a10.style.display = 'none'
+                const no = parseInt(localStorage.getItem('no'))
+                console.log(no);
+                // const no=localStorage.getItem('no')
+                
+                const data = {
+                    "problem": no,
+                    "code": code.value
+                }
+                var formData = 'type='+ encodeURIComponent(lan)+ '&problem=' + encodeURIComponent(no) + '&code=' + encodeURIComponent(data.code);
+                console.log(formData);
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "http://localhost:65533/api/judge", true)
+
+                xhr.setRequestHeader("Authorization", t.Token)
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status === 200) {
+                        response = xhr.responseText;
+                        const pa = JSON.parse(response);
+                        console.log(typeof pa.Msg);
+                        console.log(pa.Msg);
+                        response = pa.Msg
+                        //成功
+                        if (response == "Accepted") {
+                            console.log(1);
+                            (function () {
+                                const xhr = new XMLHttpRequest();
+                                xhr.open("POST", "http://localhost:65533/api/changeScore", true)
+                                xhr.setRequestHeader("Authorization", t.Token)
+                                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                                xhr.onreadystatechange = function () {
+                                    if (xhr.readyState == 4 && xhr.status === 200) {
+                                        response = xhr.responseText;
+                                        // const pa = JSON.parse(response);
+                                        console.log(response);
+                                    }
+                                };
+
+                                var formData = 'problem=' + encodeURIComponent(no);
+                                xhr.send(formData);
+
+                            })();
+                            a00.style.display = 'inline'
+                        }
+                        if (response == 'WrongAnswer') {
+                            a01.style.display = 'inline'
+                        }
+                        if (response == 'ComplierError') {
+                            a02.style.display = 'inline'
+                        }
+                        if (response == 'TimeLimited') {
+                            a03.style.display = 'inline'
+                        }
+                        if (response == 'RuntimeError') {
+                            a04.style.display = 'inline'
+                        }
+                        if (response == 'MemoryLimited') {
+                            a05.style.display = 'inline'
+                        }
+                        if (response == 'SystemError') {
+                            a10.style.display = 'inline'
+                            // a10.setAttribute('style', 'display: inline;')
+                        }
+
+
+
+                    }
+                };
+                xhr.send(formData)
+                // xhr.send(data)
+            })
+        }());
+
+
+        //获取题目信息
+        (function () {
+            const no = localStorage.getItem('no')
+            const xhr = new XMLHttpRequest();
+            var url = "http://localhost:65533/api/problem/" + no;
+            xhr.open("POST", url, true);
+            // xhr.open("POST", "http://localhost:65533/api/problem/", true)  // 根据实际的后端路由进行设置
+            // xhr.setRequestHeader("Content-Type", "application/json");
+            // xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+            xhr.setRequestHeader("Authorization", t.Token)
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            // xhr.setRequestHeader("Authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikhhb19wcCIsInRva2VuLXR5cGUiOiJBY2Nlc3NUb2tlbiIsImV4cCI6MTY4NTYzODQ0MiwiaXNzIjoiSGFvX3BwIn0.LPLi08cIk-bhRPOpm30BG84H3tigicZfFIdbp02PNJ4")
+            const change = document.querySelector('.change')
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status === 200) {
+                    console.log(xhr.response);
+                    const res = JSON.parse(xhr.responseText).data
+                    s = `<div class="ctitle">${res.ProblemTitle}</div>
+            <div class="cdetail">${res.ProblemLore}
+            </div>
+            <div>输入样例: <br>
+                <div class="in">${res.ProblemStandardIn}</div>
+            </div>
+            <div>输出样例：<br>
+                <div class="out">${res.ProblemStandardOut}
+                </div>
+            </div>
+            <div>提示：
+                <div class="tip">${res.ProblemTips}</div>
+            </div>
+            <div>作者：
+                <div class="author">${res.Author}</div>
+            </div>`
+                    change.innerHTML = s
+                }
+            };
+
+            xhr.send()
+        })();
+
+        document.addEventListener('DOMContentLoaded', function () {
+                const codeTextarea = document.querySelector('.code');
+
+                codeTextarea.addEventListener('keydown', function (e) {
+                    if (e.key === 'Tab') {
+                        e.preventDefault(); // 阻止默认的 Tab 键行为
+
+                        // 插入空格或制表符，可以根据需要调整缩进大小
+                        const spaces = '    '; // 使用两个空格作为一个缩进
+                        const start = codeTextarea.selectionStart;
+                        const end = codeTextarea.selectionEnd;
+
+                        // 在选中文本范围内插入缩进
+                        const selectedText = codeTextarea.value.substring(start, end);
+                        const indentedText = selectedText
+                            .split('\n')
+                            .map(line => spaces + line)
+                            .join('\n');
+
+                        // 替换选中文本
+                        document.execCommand('insertText', false, indentedText);
+
+                        // 调整光标位置
+                        codeTextarea.setSelectionRange(start + spaces.length, end + spaces.length);
+                    }
+                });
+            });
+   
+
+    </script>
+</body>
+
+</html>

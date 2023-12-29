@@ -1,0 +1,6 @@
+mysql:
+    dbname: viper_demo
+    host: 127.0.0.1
+    port: 3306
+port: 8081
+version: v0.0.2

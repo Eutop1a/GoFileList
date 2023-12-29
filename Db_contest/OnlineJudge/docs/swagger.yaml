@@ -1,0 +1,468 @@
+definitions:
+  models._ResponseAddProblems:
+    properties:
+      code:
+        type: string
+    type: object
+  models._ResponseAddScore:
+    properties:
+      msg:
+        type: string
+      new_score:
+        type: integer
+    type: object
+  models._ResponseDataString:
+    properties:
+      data:
+        type: string
+    type: object
+  models._ResponseError:
+    properties:
+      error:
+        type: string
+    type: object
+  models._ResponseGetData:
+    properties:
+      data:
+        items:
+          type: string
+        type: array
+    type: object
+  models._ResponseMsg:
+    properties:
+      msg:
+        type: string
+    type: object
+  models._ResponseProblems:
+    type: object
+  models._ResponseQuestionDetail:
+    type: object
+  models._ResponseReg:
+    properties:
+      Token:
+        type: string
+      end_time:
+        type: string
+    type: object
+  models._ResponseRegErr:
+    properties:
+      err:
+        type: string
+      msg:
+        type: string
+    type: object
+  models._ResponseSort:
+    type: object
+  models._ResponseToken:
+    properties:
+      Token:
+        type: string
+    type: object
+  models._ResponseUsername:
+    properties:
+      username:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /api/sort:
+    post:
+      consumes:
+      - application/json
+      description: 获取所有用户并按分数降序排序
+      parameters:
+      - description: 执行操作的用户名
+        in: formData
+        name: username
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 成功获取并排序用户列表
+          schema:
+            $ref: '#/definitions/models._ResponseSort'
+        "403":
+          description: Token 已超时
+          schema:
+            $ref: '#/definitions/models._ResponseMsg'
+        "500":
+          description: 数据库查询错误
+          schema:
+            $ref: '#/definitions/models._ResponseError'
+      summary: 根据用户分数降序排序
+  /changeScore:
+    post:
+      consumes:
+      - application/json
+      description: 通过用户名和新分数的表单数据，增加用户的总分数，并返回新的总分数
+      parameters:
+      - description: 用户名
+        in: formData
+        name: username
+        required: true
+        type: string
+      - description: 要增加的分数
+        in: formData
+        name: newscore
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 增加分数成功，返回消息和新的总分数
+          schema:
+            $ref: '#/definitions/models._ResponseAddScore'
+        "403":
+          description: Token 已超时
+          schema:
+            type: string
+        "500":
+          description: 数据库查询或保存出错
+          schema:
+            $ref: '#/definitions/models._ResponseError'
+      summary: 增加用户分数
+  /check:
+    post:
+      consumes:
+      - application/json
+      description: 通过用户名的表单数据，检查该用户名是否已存在
+      parameters:
+      - description: 要检查的用户名
+        in: formData
+        name: username
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 用户名不存在
+          schema:
+            $ref: '#/definitions/models._ResponseMsg'
+        "403":
+          description: Token 已超时或用户名已存在
+          schema:
+            $ref: '#/definitions/models._ResponseMsg'
+      summary: 检查用户名是否存在
+  /get:
+    post:
+      consumes:
+      - application/json
+      description: 通过用户名的表单数据，获取该用户的昵称
+      parameters:
+      - description: 要获取昵称的用户名
+        in: formData
+        name: username
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 成功获取用户昵称
+          schema:
+            $ref: '#/definitions/models._ResponseMsg'
+        "403":
+          description: Token 已超时
+          schema:
+            $ref: '#/definitions/models._ResponseMsg'
+        "404":
+          description: 数据库查询出错或用户不存在
+          schema:
+            $ref: '#/definitions/models._ResponseError'
+      summary: 获取用户昵称
+  /judge:
+    post:
+      consumes:
+      - application/json
+      description: 通过用户身份、问题ID和代码内容，进行代码评测，并返回评测结果
+      parameters:
+      - description: 执行操作的用户名
+        in: formData
+        name: username
+        required: true
+        type: string
+      - description: 要评测的问题ID
+        in: formData
+        name: problem
+        required: true
+        type: integer
+      - description: 要评测的代码内容
+        in: formData
+        name: code
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 成功进行代码评测
+          schema:
+            $ref: '#/definitions/models._ResponseMsg'
+        "403":
+          description: Token 已超时
+          schema:
+            $ref: '#/definitions/models._ResponseMsg'
+      summary: 代码评测
+  /list:
+    post:
+      consumes:
+      - application/json
+      description: 获取所有问题的列表
+      parameters:
+      - description: 要获取问题列表的用户名
+        in: formData
+        name: username
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 成功获取问题列表
+          schema:
+            $ref: '#/definitions/models._ResponseProblems'
+        "403":
+          description: Token 已超时
+          schema:
+            $ref: '#/definitions/models._ResponseMsg'
+        "500":
+          description: 获取问题列表出错
+          schema:
+            $ref: '#/definitions/models._ResponseMsg'
+      summary: 获取问题列表
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: 用户使用用户名和密码进行登录，成功返回Token
+      parameters:
+      - description: 用户名
+        in: formData
+        name: username
+        required: true
+        type: string
+      - description: 密码
+        in: formData
+        name: password
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 成功登录，返回Token
+          schema:
+            $ref: '#/definitions/models._ResponseToken'
+        "403":
+          description: 用户名不存在或密码错误
+          schema:
+            $ref: '#/definitions/models._ResponseMsg'
+      summary: 用户登录
+  /open:
+    get:
+      consumes:
+      - application/json
+      description: 通过表单数据中的用户名检查令牌的有效性，返回检查结果
+      parameters:
+      - description: 要检查令牌的用户名
+        in: formData
+        name: username
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 令牌有效，返回用户名
+          schema:
+            $ref: '#/definitions/models._ResponseUsername'
+        "403":
+          description: 无效令牌
+          schema:
+            $ref: '#/definitions/models._ResponseMsg'
+      summary: 检查令牌有效性
+  /problem/:id:
+    post:
+      consumes:
+      - application/json
+      description: 通过问题ID和管理员身份，获取指定问题的详细信息
+      parameters:
+      - description: 执行操作的管理员用户名
+        in: formData
+        name: _
+        required: true
+        type: string
+      - description: 要获取的问题ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 成功获取问题详情
+          schema:
+            $ref: '#/definitions/models._ResponseQuestionDetail'
+        "403":
+          description: 获取问题详情出错
+          schema:
+            $ref: '#/definitions/models._ResponseMsg'
+      summary: 获取问题详情
+  /problem/add:
+    post:
+      consumes:
+      - application/json
+      description: 通过管理员身份，使用表单数据添加新的问题，并返回操作结果
+      parameters:
+      - description: 执行操作的管理员用户名
+        in: formData
+        name: username
+        required: true
+        type: string
+      - description: 问题ID
+        in: formData
+        name: id
+        required: true
+        type: string
+      - description: 问题标题
+        in: formData
+        name: title
+        required: true
+        type: string
+      - description: 问题描述
+        in: formData
+        name: lore
+        required: true
+        type: string
+      - description: 问题标准输入
+        in: formData
+        name: input
+        required: true
+        type: string
+      - description: 问题标准输出
+        in: formData
+        name: output
+        required: true
+        type: string
+      - description: 问题提示
+        in: formData
+        name: tips
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 成功添加问题
+          schema:
+            $ref: '#/definitions/models._ResponseAddProblems'
+        "403":
+          description: 解析表单数据出错
+          schema:
+            $ref: '#/definitions/models._ResponseMsg'
+      summary: 添加问题
+  /problem/file/:id:
+    post:
+      consumes:
+      - application/json
+      description: 通过问题ID，获取指定问题的文件列表
+      parameters:
+      - description: 要获取文件列表的问题ID
+        in: formData
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 成功获取问题文件列表
+          schema:
+            $ref: '#/definitions/models._ResponseGetData'
+        "403":
+          description: 读取文件列表出错
+          schema:
+            $ref: '#/definitions/models._ResponseDataString'
+      summary: 获取问题文件列表
+  /problem/file/add/:id:
+    post:
+      consumes:
+      - multipart/form-data
+      description: 通过管理员身份，使用表单数据上传问题的输入和输出文件，并返回操作结果
+      parameters:
+      - description: 执行操作的管理员用户名
+        in: formData
+        name: username
+        required: true
+        type: string
+      - description: 要上传文件的问题ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: 问题输入文件（.in）
+        in: formData
+        name: input
+        required: true
+        type: file
+      - description: 问题输出文件（.out）
+        in: formData
+        name: output
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 成功上传问题文件
+          schema:
+            $ref: '#/definitions/models._ResponseMsg'
+        "400":
+          description: 接收或保存文件出错
+          schema:
+            $ref: '#/definitions/models._ResponseMsg'
+        "403":
+          description: Token 已超时或用户非管理员
+          schema:
+            $ref: '#/definitions/models._ResponseMsg'
+      summary: 上传问题文件
+  /register:
+    post:
+      consumes:
+      - application/json
+      description: 用户使用用户名、密码和昵称进行注册，成功返回Token
+      parameters:
+      - description: 用户名
+        in: formData
+        name: username
+        required: true
+        type: string
+      - description: 密码
+        in: formData
+        name: password
+        required: true
+        type: string
+      - description: 昵称
+        in: formData
+        name: nickname
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 成功注册，返回Token和Token过期时间
+          schema:
+            $ref: '#/definitions/models._ResponseReg'
+        "403":
+          description: 用户已存在或注册失败
+          schema:
+            $ref: '#/definitions/models._ResponseRegErr'
+      summary: 用户注册
+swagger: "2.0"
