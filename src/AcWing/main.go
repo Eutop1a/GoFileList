@@ -8,7 +8,9 @@ func max(a, b int) int {
 	}
 	return a
 }
-
+func main() {
+	// This is for test
+}
 func main() {
 	n, m := 0, 0
 	fmt.Scan(&n, &m)
