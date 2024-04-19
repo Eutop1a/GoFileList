@@ -2,13 +2,6 @@ package main
 
 import "fmt"
 
-func max(a, b int) int {
-	if a < b {
-		return b
-	}
-	return a
-}
-
 func main() {
 	n, m := 0, 0
 	fmt.Scan(&n, &m)
